@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayra Scarf | Tentang Kami</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>NAYRA SCARF</h1>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active-link">Tentang Kita</a>
+      <a href="produk.html">Produk</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-logo">
+      <h2>NAYRA SCARF</h2>
+      <p class="tagline">
+        Mencerminkan semangat untuk membuat wanita muslimah tampil bangga, percaya diri, dan bersinar melalui hijab yang nyaman, elegan, dan berkualitas.
+      </p>
+    </section>
+
+    <section class="page-content">
+      <div class="content-row">
+        <div class="content-image">
+          <img src="images/image_6.jpg" alt="Wanita berhijab bersama" />
+        </div>
+        <div class="content-text">
+          <h3>Kekuatan dalam Kelembutan</h3>
+          <p>
+            Di balik setiap langkah wanita, ada kekuatan, kelembutan, dan keindahan alami yang tidak bisa disangkal. Nayra Scarf lahir dari keyakinan bahwa hijab bukan hanya pelengkap, tapi representasi dari identitas dan nilai yang dijunjung tinggi.
+          </p>
+        </div>
+      </div>
+      <div class="content-row reverse">
+        <div class="content-image">
+          <img src="images/image_1.jpeg" alt="Wanita berhijab tertawa bersama" />
+        </div>
+        <div class="content-text">
+          <h3>Kualitas dan Kenyamanan</h3>
+          <p>
+            Kami berkomitmen untuk menghadirkan produk dengan material terbaik yang tidak hanya indah dipandang, tetapi juga nyaman dikenakan sepanjang hari. Setiap helai scarf adalah cerminan dedikasi kami pada kualitas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <button onclick="location.href='produk.html'">LIHAT PRODUK KAMI</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Nayra Scarf. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const burger = document.getElementById("hamburger");
+      nav.classList.toggle("active");
+      burger.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

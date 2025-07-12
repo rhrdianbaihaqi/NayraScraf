@@ -1,0 +1,600 @@
+/* =================================================================
+   NAYRA SCARF - STYLESHEET GABUNGAN
+   - Versi Final 4.0 (Slider Produk Interaktif)
+   - Deskripsi: File ini berisi semua gaya untuk situs Nayra Scarf.
+   ================================================================= */
+
+/* == 1. GAYA GLOBAL (Berlaku di semua halaman) == */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+
+/* --- Header & Navigasi --- */
+header {
+  background-color: #FDDCDC;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #993333;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #993333;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #993333;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active-link {
+  color: #993333;
+  font-weight: 700;
+}
+
+.nav-links a.active-link::after {
+    width: 100%;
+}
+
+
+/* --- Hamburger Menu --- */
+.hamburger {
+  display: none;
+  width: 25px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  left: 0;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 30px 15px 20px;
+  color: #777;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  margin-top: auto;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+
+/* == 2. GAYA HALAMAN: TENTANG KITA (index.html) == */
+.hero-logo {
+  text-align: center;
+  background: linear-gradient(135deg, #fef5f5 0%, #fdeeee 100%);
+  padding: 60px 20px;
+}
+
+.hero-logo h2 {
+  font-family: 'Georgia', serif;
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: 400;
+  color: #993333;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.tagline {
+  font-style: italic;
+  margin: 15px auto 0;
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.page-content {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.content-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.content-image {
+  flex-basis: 45%;
+  min-width: 300px;
+}
+
+.content-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.content-image img:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.content-text {
+  flex-basis: 45%;
+  min-width: 300px;
+}
+
+.content-text h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #a34242;
+    margin-bottom: 15px;
+}
+
+.content-text p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.cta {
+  background: linear-gradient(135deg, #D7A7A7 0%, #c99595 100%);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.cta button {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #fff;
+  color: #993333;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cta button:hover {
+  background-color: #993333;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+
+/* == 3. GAYA HALAMAN: PRODUK (produk.html) == */
+.page-header-produk {
+    background-color: #fef5f5;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-header-produk h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #993333;
+    margin-bottom: 10px;
+}
+
+.page-header-produk p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.card {
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card .card-body {
+    padding: 16px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #993333;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+.card .card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #D7A7A7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.card .card-button:hover {
+  background-color: #c99393;
+}
+
+
+/* === GAYA SLIDER GAMBAR PRODUK INTERAKTIF === */
+.card .image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    text-decoration: none; /* Menghilangkan garis bawah dari link pembungkus */
+}
+.card .gambar-produk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Semua gambar disembunyikan awalnya */
+    transition: opacity 0.5s ease-in-out; /* Efek fade saat berganti */
+}
+.card .gambar-produk.active {
+    opacity: 1; /* Hanya gambar aktif yang terlihat */
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    opacity: 0; /* Sembunyikan tombol awalnya */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+.card:hover .slider-btn {
+    opacity: 1; /* Tampilkan tombol saat kartu di-hover */
+}
+.slider-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+
+/* == 4. GAYA HALAMAN: KONTAK (kontak.html) == */
+.page-header-kontak {
+    background-color: #fef5f5;
+    text-align: center;
+    padding: 50px 20px;
+}
+.page-header-kontak h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #993333;
+    margin-bottom: 10px;
+}
+.page-header-kontak p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #555;
+}
+.kontak-cta {
+    padding: 50px 20px;
+    text-align: center;
+}
+.kontak-cta h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(37, 211, 102, 0.3);
+}
+.whatsapp-button svg {
+    width: 24px;
+    height: 24px;
+}
+.footer-contact h3 {
+    font-family: 'Georgia', serif;
+    color: #993333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.footer-contact div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+.footer-contact svg {
+  width: 18px;
+  height: 18px;
+  fill: #993333;
+  flex-shrink: 0;
+}
+
+
+/* == 5. GAYA HALAMAN: DETAIL PRODUK (detail_produk.html) == */
+.produk-detail {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 20px;
+  text-align: center;
+}
+.produk-nama-detail {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #993333;
+  font-weight: bold;
+}
+.produk-deskripsi {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+.varian-grid {
+  display: grid;
+  gap: 25px;
+  margin: 40px auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.varian-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+.varian-card:hover {
+    transform: translateY(-4px);
+}
+.varian-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.varian-nama {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6B3E3E;
+}
+.varian-harga {
+  font-size: 0.95rem;
+  color: #993333;
+  margin-top: 4px;
+  font-weight: 500;
+}
+.cta-pesan {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+.cta-pesan h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.pesan-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #993333;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(153, 51, 51, 0.2);
+}
+.pesan-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(153, 51, 51, 0.3);
+}
+.pesan-button svg {
+  width: 22px;
+  height: 22px;
+}
+.cta-kembali {
+  margin: 20px 0 40px;
+  text-align: center;
+}
+.cta-kembali a.button-kembali {
+  display: inline-block;
+  background-color: #D7A7A7;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-kembali a.button-kembali:hover {
+  background-color: #c99393;
+  transform: translateY(-2px);
+}
+
+
+/* == 6. GAYA RESPONSIVE (Tampilan Mobile) == */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  header { padding: 15px 20px; }
+  .nav-links { display: none; flex-direction: column; align-items: center; position: absolute; top: 68px; right: 0; background-color: #fef4f4; padding: 10px 0; z-index: 999; animation: fadeIn 0.3s ease; width: 100%; gap: 0; border-bottom: 1px solid #FDDCDC; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+  .nav-links.active { display: flex; }
+  .nav-links a { width: 100%; text-align: center; padding: 15px 0; }
+  .nav-links a:hover { background-color: #FDDCDC; }
+  .nav-links a::after { display: none; }
+  .hamburger { display: flex; flex-direction: column; justify-content: space-between; }
+  
+  .hero-logo h2, .page-header-produk h2, .page-header-kontak h2 { font-size: 2.2rem; }
+  .tagline, .page-header-produk p, .page-header-kontak p { font-size: 1rem; }
+  
+  .content-row, .content-row.reverse { flex-direction: column; gap: 30px; text-align: center; }
+  .content-text h3 { font-size: 1.5rem; }
+
+  .produk-nama-detail { font-size: 1.6rem; }
+  .produk-deskripsi { font-size: 0.9rem; }
+}
